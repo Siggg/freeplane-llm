@@ -28,9 +28,24 @@ int READ_TIMEOUT_MS = 120_000
 
 /********* AIDE *********/
 final String HELP_TEXT = """
-🧭 Commandes Freeplane → GPT-5
-…(inchangé)…
-""".trim()
+"Commands to write in a Freeplan node in order to call GPT-5\n" +
+"----------------------------------------\n" +
+"Models & thinking options:\n" +
+"  any of @gpt-5-mini  @gpt-mini  @mini  @reasoning:low or @default commands\n" +
+"     -> call model=gpt-5-mini with reasoning.effort=low and store=false\n" +
+"  any of @gpt5  @gpt-5  @reasoning:high  @dt  or @deep-thinking commands\n" +
+"     -> call model=gpt-5 with reasoning.effort=high and store=true\n\n" +
+"Verbosity options:\n" +
+"  @verbose | @verbose:high | @verbosity:high  -> call for high verbosity (long answers)\n" +
+"  @verbose:medium | @verbosity:medium | @default -> call for medium verbosity\n" +
+"  @bref | @verbose:low | @verbosity:low | @verbose:no | @verbosity:no -> call for low verbosity (short answers)\n\n" +
+"Tools calls:\n" +
+"  @web | @web:on      -> adds a call to the web search tool += web_search\n" +
+"  @web:off            -> without web search -= web_search\n" +
+"  @image | @image:on  -> with image generation (not tested) += image_generation\n" +
+"  @image:off          -> witout image generation -= image_generation\n\n" +
+"Debug options: @debug:on / @debug:off\n" +
+"Tip: write your prompt as a fully structured branch in the mindmap, then give your commands in a sibling node, just below the prompt branche and call the script from this node.\n""".trim()
 
 /********* UTIL — LOG DANS DETAILS *********/
 def appendDetails = { String line ->
@@ -311,3 +326,4 @@ new Thread({
         })
     }
 } as Runnable).start()
+
