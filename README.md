@@ -14,4 +14,5 @@ That should be it.
 - Create a new node in your mindmap
 - write "@help" as the content of your node
 - execute the script from this node
-- follow the help... if you can read French (or ask a chatbot for translation)
+- the script will insert help instructions into your mindmap
+- follow these instructions
